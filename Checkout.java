@@ -46,4 +46,18 @@ public class Checkout {
         int tax = BigDecimal.valueOf( totalCost() *taxRate ).setScale(0, RoundingMode.HALF_UP).intValue();
         return tax;
     }
+
+    /**
+     * @return the taxRate
+     */
+    public double getTaxRate() {
+        return taxRate;
+    }
+
+    /**
+     * @param taxRate the taxRate to set
+     */
+    public void setTaxRate(double taxRate) {
+        this.taxRate = taxRate;
+    }
 }
