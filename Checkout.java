@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
-import com.sun.tools.javac.jvm.Items;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Checkout {
     protected ArrayList<DessertItem> items;
@@ -41,5 +42,8 @@ public class Checkout {
         return cost;
     }
 
-    
+    int totalTax() {
+        int tax = BigDecimal.valueOf( totalCost() *taxRate ).setScale(0, RoundingMode.HALF_UP).intValue();
+        return tax;
+    }
 }
