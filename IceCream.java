@@ -1,4 +1,4 @@
-package github.com.Schlitzohr101.ProjectIPI;
+
 public class IceCream extends DessertItem{
     private int cost;
     private int calories;

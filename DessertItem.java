@@ -1,4 +1,3 @@
-package github.com.Schlitzohr101.ProjectIPI;
 public abstract class DessertItem {
     protected String name;
 

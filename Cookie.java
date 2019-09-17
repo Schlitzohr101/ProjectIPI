@@ -1,5 +1,3 @@
-package github.com.Schlitzohr101.ProjectIPI;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
