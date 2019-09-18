@@ -70,8 +70,10 @@ public class Candy extends DessertItem {
 
     @Override
     public String toString() {
+        //adjusting to be proper display format
         StringBuilder builder = new StringBuilder();
-        builder.append(getName()+"(Candy)");
+        builder.append(this.weight + " lbs. @ "+this.pricePerPound+ "/lb.\n");
+        builder.append( String.format("%-29s %5.2f\n", this.name + (this.name == "" ? "" : "(Candy)"), getCost() )  );
         return builder.toString();
     }
 }

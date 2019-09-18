@@ -1,4 +1,3 @@
-
 public class IceCream extends DessertItem{
     private int cost;
     private int calories;
