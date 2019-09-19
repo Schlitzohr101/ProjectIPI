@@ -1,18 +1,12 @@
-
-public class IceCream extends DessertItem{
+public class Sundae extends IceCream{
     private double cost;
     private int calories;
     private int amount;
-    /**
-     * Default constructor
-     * Initializes object
-     *
-     */
-    public IceCream(){
+    public Sundae(){
         super();
-        amount = 0;
-        cost = 0;
-        calories = 0;
+        double cost = 0;
+        int amount = 0;
+        int calories = 0;
     }
     /**
      * Non-default constructor
@@ -22,7 +16,7 @@ public class IceCream extends DessertItem{
      * @param calories
      * @param amount
      */
-    public IceCream(String name, double cost, int calories, int amount){
+    public Sundae(String name, double cost, int calories, int amount){
         this.name = name;
         this.cost = cost;
         this.calories = calories;
@@ -71,7 +65,7 @@ public class IceCream extends DessertItem{
      */
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append(getName()+" (Ice Cream)");
+        builder.append(getName()+" (Sundae)");
         return builder.toString();
     }
 }
