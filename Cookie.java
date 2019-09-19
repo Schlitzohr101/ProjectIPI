@@ -45,6 +45,7 @@ public class Cookie extends DessertItem {
      * returns the amount of calories per
      * @return the calories
      */
+    @Override
     public int getCalories() {
         return calories;
     }
@@ -77,12 +78,15 @@ public class Cookie extends DessertItem {
      */
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append(amount+" @ "+pricePerDozen+" /dz.\n");
-        builder.append(String.format("%-29s %5.2f\n", this.name + (this.name == "" ? "" : "(Cookie)"), getCost() )  );
-
-
-        //builder.append(getName()+"(Cookie)");
+        builder.append(this.name + (this.name == "" ? "" : "(Cookie)"));
         return builder.toString();
     }
 
+    @Override
+    public String printAsReceipt() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(amount+" @ "+pricePerDozen+" /dz.\n");
+        builder.append( String.format("%-29s %5.2f\n", this.toString(), getCost() )  );
+        return builder.toString();
+    }
 }

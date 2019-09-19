@@ -45,6 +45,7 @@ public class Candy extends DessertItem {
      * gets the calories per serving
      * @return the calories
      */
+    @Override
     public int getCalories() {
         return calories;
     }
@@ -72,8 +73,15 @@ public class Candy extends DessertItem {
     public String toString() {
         //adjusting to be proper display format
         StringBuilder builder = new StringBuilder();
+        builder.append(this.name + (this.name == "" ? "" : "(Candy)"));
+        return builder.toString();
+    }
+
+    @Override
+    public String printAsReceipt() {
+        StringBuilder builder = new StringBuilder();
         builder.append(this.weight + " lbs. @ "+this.pricePerPound+ "/lb.\n");
-        builder.append( String.format("%-29s %5.2f\n", this.name + (this.name == "" ? "" : "(Candy)"), getCost() )  );
+        builder.append( String.format("%-29s %5.2f\n", this.toString(), getCost() )  );
         return builder.toString();
     }
 }

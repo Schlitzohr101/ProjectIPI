@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.util.Collections;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -26,13 +26,6 @@ public class Checkout {
 
     @Override
     public String toString() {
-        //needs to be what is defined in the java doc in terms of formatting and printing of specific variables
-        /*
-        A&S Dessert Shop
-        ----------------
-2.5 lbs. @ 8.25 /lb.
-Lolipop(Candy)              20.63
-        */
         StringBuilder builder = new StringBuilder();
         builder.append("Output Receipt:\n");
         builder.append("Number of Items: "+numOfItems()+"\n");
@@ -44,11 +37,11 @@ Lolipop(Candy)              20.63
         // builder.append(String.format(format, args))
 
         for (DessertItem item : items) {
-            builder.append(item.toString());
+            builder.append(item.printAsReceipt());
         }
 
-        builder.append( String.format("\n%-29s %5.2f\n", "Tax:",(double) totalTax()/100));
-        builder.append( String.format("%-29s %5.2f\n", "Total Cost:",((double) totalTax() + (double) totalCost())/100));
+        builder.append( String.format("\n%-28s %6.2f\n", "Tax:",(double) totalTax()/100));
+        builder.append( String.format("%-27s %7.2f\n", "Total Cost:",((double) totalTax() + (double) totalCost())/100));
         return builder.toString();
     }
 
@@ -77,5 +70,15 @@ Lolipop(Candy)              20.63
      */
     public void setTaxRate(double taxRate) {
         this.taxRate = taxRate;
+    }
+
+    public void displayList() {
+        for (DessertItem var : items) {
+            System.out.println(var.toString() + " has "+var.getCalories()+" calories.");
+        }
+    }
+
+    public void sortList() {
+        Collections.sort(items);
     }
 }
