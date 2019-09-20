@@ -1,15 +1,12 @@
-public class IceCream extends DessertItem{
+public class Sundae extends IceCream{
     private double cost;
     private int calories;
-    /**
-     * Default constructor
-     * Initializes object
-     *
-     */
-    public IceCream(){
+    private int amount;
+    public Sundae(){
         super();
-        cost = 0;
-        calories = 0;
+        double cost = 0;
+        int amount = 0;
+        int calories = 0;
     }
     /**
      * Non-default constructor
@@ -19,11 +16,11 @@ public class IceCream extends DessertItem{
      * @param calories
      * @param amount
      */
-
-    public IceCream(String name, double cost, int calories){
+    public Sundae(String name, double cost, int calories, int amount){
         this.name = name;
         this.cost = cost;
         this.calories = calories;
+        this.amount = amount;
     }
 
     /**
@@ -40,9 +37,15 @@ public class IceCream extends DessertItem{
      * returns the amount of calories per
      * @return the calories
      */
-    @Override
     public int getCalories() {
         return calories;
+    }
+
+    /**
+     * @return the amount
+     */
+    public int getAmount() {
+        return amount;
     }
 
     /**
@@ -62,14 +65,7 @@ public class IceCream extends DessertItem{
      */
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append(this.name + (this.name == "" ? "" : "(IceCream)"));
-        return builder.toString();
-    }
-    
-    @Override
-    public String printAsReceipt() {
-        StringBuilder builder = new StringBuilder();
-        builder.append( String.format("%-29s %5.2f\n", this.toString(), getCost() )  );
+        builder.append(getName()+" (Sundae)");
         return builder.toString();
     }
 }

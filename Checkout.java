@@ -52,7 +52,7 @@ public class Checkout {
         }
         return cost;
     }
-
+    //multiplies int total cost with the tax rate which is a double, rounds the value and returns an int value
     int totalTax() {
         int tax = BigDecimal.valueOf( totalCost() *taxRate ).setScale(0, RoundingMode.HALF_UP).intValue();
         return tax;
