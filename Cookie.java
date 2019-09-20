@@ -1,4 +1,10 @@
 import java.math.BigDecimal;
+/*  William Murray, Adrian Seth
+    September 26th, 2019
+    Purpose: Program is designed to be a POS for the company Dessert Shoppe
+    Program will accept various Dessert Items and calulate the total cost of
+    the items selected
+*/
 import java.math.RoundingMode;
 
 public class Cookie extends DessertItem {
@@ -51,6 +57,8 @@ public class Cookie extends DessertItem {
     }
 
     /**
+     * getAmount
+     * retuns the amount of cookies to be purchased
      * @return the amount
      */
     public int getAmount() {
@@ -58,7 +66,9 @@ public class Cookie extends DessertItem {
     }
 
     /**
-     * @return the pricePerDozen
+     * getPricePerDozen 
+     * returns the price per dozen of calling cookie
+     * @return the pricePerDozen as double
      */
     public double getPricePerDozen() {
         return pricePerDozen;

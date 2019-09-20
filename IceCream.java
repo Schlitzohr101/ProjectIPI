@@ -1,6 +1,12 @@
+/*  William Murray, Adrian Seth
+    September 26th, 2019
+    Purpose: Program is designed to be a POS for the company Dessert Shoppe
+    Program will accept various Dessert Items and calulate the total cost of
+    the items selected
+*/
 public class IceCream extends DessertItem{
-    private double cost;
-    private int calories;
+    protected double cost;
+    protected int calories;
     /**
      * Default constructor
      * Initializes object
@@ -17,7 +23,6 @@ public class IceCream extends DessertItem{
      * @param name
      * @param cost
      * @param calories
-     * @param amount
      */
 
     public IceCream(String name, double cost, int calories){

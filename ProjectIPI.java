@@ -1,3 +1,9 @@
+/*  William Murray, Adrian Seth
+    September 26th, 2019
+    Purpose: Program is designed to be a POS for the company Dessert Shoppe
+    Program will accept various Dessert Items and calulate the total cost of
+    the items selected
+*/
 public class ProjectIPI {
     public static void main(String[] args) {
         Checkout tester = new Checkout();
@@ -39,6 +45,18 @@ public class ProjectIPI {
                             chocolateIceCream.printAsReceipt()+"\n"+
                             strawberryIceCream.printAsReceipt()+"\n"+
                             cookiesnCreamIceCream.printAsReceipt()+"\n");
+        System.out.println("-----------------------------------------------------------------------");    
+        System.out.println("SUNDAE TESTER");
+        Sundae s = new Sundae();
+        Sundae caramelSundae = new Sundae("Caramel", 5.75, 450);
+        Sundae caramelWithSprinklesSundae = new Sundae("Carmel", 5.75, 450, "Sprinkles", 1, 100);
+        Sundae bananaSplitSundae = new Sundae("Banana Split", 8.55, 610);
+        Sundae bananaSplitWithStrawberrySundae = new Sundae("Banana Split", 8.55, 610, "Strawberry", 1.50, 100);
+        System.out.println( s.printAsReceipt()+"\n"+
+                            caramelSundae.printAsReceipt()+"\n"+
+                            caramelWithSprinklesSundae.printAsReceipt()+"\n"+
+                            bananaSplitSundae.printAsReceipt()+"\n"+
+                            bananaSplitWithStrawberrySundae.printAsReceipt()+"\n");
         System.out.println("-----------------------------------------------------------------------");
         tester.enterItem(lolipopCandy);
         tester.enterItem(toffee);
@@ -52,20 +70,25 @@ public class ProjectIPI {
         tester.enterItem(vanillaIceCream);
         tester.enterItem(strawberryIceCream);
         tester.enterItem(cookiesnCreamIceCream);
-        //Cookie ck = new Cookie("Choclate", 4, 150, 5.45);
-        //tester.enterItem(ck);
+        tester.enterItem(caramelSundae);
+        tester.enterItem(caramelWithSprinklesSundae);
+        tester.enterItem(bananaSplitSundae);
+        tester.enterItem(bananaSplitWithStrawberrySundae);
         System.out.println(tester.toString() + "\n"); 
         System.out.println("-----------------------------------------------------------------------");
         System.out.println("MAX TEST (SAME TYPES)");
         MaxOf(lolipopCandy, toffee);
         MaxOf(chocolateChipCookie, SnickerDoodleCookie);
         MaxOf(vanillaIceCream, cookiesnCreamIceCream);
+        MaxOf(caramelSundae, bananaSplitWithStrawberrySundae);
         System.out.println();
         System.out.println("-----------------------------------------------------------------------");
         System.out.println("MAX TEST (DIFFERENT TYPES)"); 
         MaxOf(toffee, sugarCookie);
         MaxOf(peanutButterCookie, cookiesnCreamIceCream);
+        MaxOf(caramelWithSprinklesSundae, chocolateChipCookie);
         MaxOf(chocolateBarCandy, vanillaIceCream);
+        MaxOf(lolipopCandy, bananaSplitSundae);
         System.out.println();
         System.out.println("-----------------------------------------------------------------------");
         System.out.println("UNSORTED LIST");
@@ -75,7 +98,6 @@ public class ProjectIPI {
         System.out.println("SORTED LIST");
         tester.sortList();
         tester.displayList(); 
-
     }
 
     public static void MaxOf(DessertItem item1, DessertItem item2) {

@@ -1,3 +1,9 @@
+/*  William Murray, Adrian Seth
+    September 26th, 2019
+    Purpose: Program is designed to be a POS for the company Dessert Shoppe
+    Program will accept various Dessert Items and calulate the total cost of
+    the items selected
+*/
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 public class Candy extends DessertItem {
@@ -51,14 +57,18 @@ public class Candy extends DessertItem {
     }
 
     /**
-     * @return the weight
+     * getWeight
+     * returns weight of calling candy object
+     * @return the weight as double
      */
     public double getWeight() {
         return weight;
     }
 
     /**
-     * @return the pricePerPound
+     * getPricePerPound
+     * gives the price per pound of calling candy
+     * @return the pricePerPound as double
      */
     public double getPricePerPound() {
         return pricePerPound;

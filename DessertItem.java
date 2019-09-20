@@ -1,3 +1,9 @@
+/*  William Murray, Adrian Seth
+    September 26th, 2019
+    Purpose: Program is designed to be a POS for the company Dessert Shoppe
+    Program will accept various Dessert Items and calulate the total cost of
+    the items selected
+*/
 public abstract class DessertItem implements Comparable<DessertItem> {
     protected String name;
 
